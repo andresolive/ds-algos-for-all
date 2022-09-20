@@ -1,5 +1,7 @@
 export default function bs_list(haystack: number[], needle: number): boolean {
   // [lo, hi) --> lo is inclusive, hi is exclusive
+  // when reassigning lo, do it to middle + 1
+  // when reassigning hi, do it to middle
 
   let lo = 0;
   let hi = haystack.length;
