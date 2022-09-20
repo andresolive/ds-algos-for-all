@@ -12,6 +12,7 @@ export default function two_crystal_balls(breaks: boolean[]): number {
   // at this point i = the floor where the first ball broke
 
   // second ball
+  // go back i - jumpAmt floors and start dropping the second ball there
   for (let j = i - jumpAmt; j < n; j++) {
     if (breaks[j]) return j;
   }
