@@ -31,6 +31,7 @@ function walk(maze: string[], wall: string, curr: Point, end: Point, seen: boole
   // ----
   // The 3 steps in a recursive call:
   // 1. pre
+  seen[curr.y][curr.x] = true;
   path.push(curr);
 
   // 2. recurse
