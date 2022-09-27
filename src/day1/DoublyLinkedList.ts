@@ -87,7 +87,37 @@ export default class DoublyLinkedList<T> {
     this.tail = node;
   }
   remove(item: T): T | undefined {
+    let curr = this.head;
+    for (let i = 0; curr && curr.value && i < this.length; i++) {
+      curr = curr.next;
+      if (curr?.value === item) {
+        break;
+      }
+    }
 
+    if (!curr) return undefined;
+
+    this.length--;
+    if (this.length === 0) {
+      const out = this.head?.value;
+      this.head = this.tail = undefined;
+      return out;
+    }
+
+    // if there is a previous
+    if (curr.prev) curr.prev = curr.next;
+    // if there is a next
+    if (curr.next) curr.next = curr.prev;
+
+    // is current the head?
+    if (curr === this.head) this.head = curr.next;
+    // is current the tail
+    if (curr === this.tail) this.tail = curr.prev;
+
+    // break current from the list
+    curr.prev = curr.next = undefined;
+
+    return curr.value;
   }
   get(idx: number): T | undefined {
 
