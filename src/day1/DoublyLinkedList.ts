@@ -52,20 +52,15 @@ export default class DoublyLinkedList<T> {
 
     this.length++;
     // we need to traverse the list
-    let curr = this.head;
-    for (let i = 0; curr && i < idx; i++) {
-      curr = curr.next;
-    }
-
-    curr = curr as Node<T>;
     // curr represents [C]
-
+    const curr = this.getAt(idx) as Node<T>;
     // now that we are at the index where we need to insert:
     const node = { value: item } as Node<T>;
 
     // first: attach the new node
     node.next = curr;
     node.prev = curr.prev;
+
     // second: break the old links
     curr.prev = node;
     if (curr.prev) {
@@ -97,6 +92,20 @@ export default class DoublyLinkedList<T> {
 
     if (!curr) return undefined;
 
+    return this.removeNode(curr);
+  }
+  get(idx: number): T | undefined {
+    return this.getAt(idx)?.value;
+
+  }
+  removeAt(idx: number): T | undefined {
+    const node = this.getAt(idx);
+
+    if (!node) return undefined;
+    return this.removeNode(node);
+  }
+
+  private removeNode(node: Node<T>): T | undefined {
     this.length--;
     if (this.length === 0) {
       const out = this.head?.value;
@@ -105,24 +114,22 @@ export default class DoublyLinkedList<T> {
     }
 
     // if there is a previous
-    if (curr.prev) curr.prev = curr.next;
+    if (node.prev) node.prev = node.next;
     // if there is a next
-    if (curr.next) curr.next = curr.prev;
+    if (node.next) node.next = node.prev;
 
-    // is current the head?
-    if (curr === this.head) this.head = curr.next;
-    // is current the tail
-    if (curr === this.tail) this.tail = curr.prev;
+    // is current node the head?
+    if (node === this.head) this.head = node.next;
+    // is current node the tail
+    if (node === this.tail) this.tail = node.prev;
 
-    // break current from the list
-    curr.prev = curr.next = undefined;
+    // break current node from the list
+    node.prev = node.next = undefined;
 
-    return curr.value;
+    return node.value;
   }
-  get(idx: number): T | undefined {
 
-  }
-  removeAt(idx: number): T | undefined {
+  private getAt(idx: number): Node<T> | undefined {
 
   }
 }
