@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/
 
-var walk = function (currentNode, prevMax = 0) {
+var walk = function (currentNode) {
     if (!currentNode) return 0;
 
     return 1 + Math.max(walk(currentNode.left), walk(currentNode.right));
