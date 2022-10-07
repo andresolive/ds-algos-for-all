@@ -1,4 +1,6 @@
-var walk = function (currentNode, path) {
+// https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+let walk = function (currentNode, path) {
     if (!currentNode) return path;
 
     // 1. pre-recursion:
@@ -15,7 +17,7 @@ var walk = function (currentNode, path) {
     return path;
 };
 
-var inorderTraversal = function (root) {
+let inorderTraversal = function (root) {
     // recursion
     // return walk(root, [])
 
