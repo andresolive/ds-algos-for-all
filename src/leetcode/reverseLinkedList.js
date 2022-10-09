@@ -23,3 +23,20 @@ var reverseList = function (head) {
 
     return newHead;
 };
+
+// using iteration
+var reverseListIteration = function (head) {
+    if (!head) return head;
+
+    let node = head;
+    let prev = null;
+    while (node) {
+        const nextNode = node.next;
+        node.next = prev;
+        prev = node;
+        node = nextNode;
+    }
+
+    // you return the pointer to the head
+    return prev;
+};
