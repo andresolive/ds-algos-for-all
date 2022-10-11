@@ -1,4 +1,6 @@
-var isPalindrome = function (head) {
+// leetcode.com/problems/palindrome-linked-list/
+
+https: var isPalindrome = function (head) {
     const arr = [];
 
     while (head) {
@@ -19,3 +21,5 @@ var isPalindrome = function (head) {
 
     return true;
 };
+
+// try the recursive apporach and the in-place reversing approach
