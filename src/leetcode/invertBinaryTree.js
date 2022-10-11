@@ -1,13 +1,13 @@
 // https://leetcode.com/problems/invert-binary-tree/submissions/
 
-var invertTree = function (node) {
-    if (!node) return null;
+var invertTree = function (root) {
+    if (!root) return null;
 
-    const prevLeft = invertTree(node.left);
-    const prevRight = invertTree(node.right);
+    const prevLeft = invertTree(root.left);
+    const prevRight = invertTree(root.right);
 
-    node.left = prevRight;
-    node.right = prevLeft;
+    root.left = prevRight;
+    root.right = prevLeft;
 
-    return node;
+    return root;
 };
