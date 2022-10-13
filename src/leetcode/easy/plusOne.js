@@ -39,3 +39,18 @@ var plusOne = function (digits) {
 
     return digits;
 };
+
+var plusOneCleaner = function (digits) {
+    // move along the input starting from the end
+    for (let i = digits.length - 1; i >= 0; i--) {
+        // set all the nines at the end of the array to zeroes
+        if (digits[i] === 9) digits[i] = 0;
+        else {
+            // increase the rightmost not-9 by 1 and return the result
+            digits[i] += 1;
+            return digits;
+        }
+    }
+
+    return [1].concat(digits);
+};
