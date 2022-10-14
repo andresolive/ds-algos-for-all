@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/pascals-triangle/solution/
+// https://leetcode.com/problems/pascals-triangle/
 
 var generate = function (numRows) {
     const result = [];
