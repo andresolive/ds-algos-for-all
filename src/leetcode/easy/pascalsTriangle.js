@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/pascals-triangle/solution/
+
 var generate = function (numRows) {
     const result = [];
     let prevRow = [1];
