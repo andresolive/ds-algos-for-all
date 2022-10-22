@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/first-unique-character-in-a-string/
+
 var firstUniqChar = function (s) {
     const dict = {};
 
