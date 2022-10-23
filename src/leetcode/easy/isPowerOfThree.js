@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/power-of-three/
+
 var isPowerOfThree = function (n) {
     if (n === 1) return true;
 
