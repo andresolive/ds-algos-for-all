@@ -9,3 +9,11 @@ var isPowerOfThree = function (n) {
 };
 
 console.log(isPowerOfThree(617673396283947));
+
+var isPowerOfThreeLoop = function (n) {
+    if (n < 1) return false;
+
+    while (n % 3 === 0) n /= 3;
+
+    return n === 1;
+};
