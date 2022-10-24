@@ -12,3 +12,17 @@ var missingNumber = function (nums) {
         else if (i !== nums[i]) return i;
     }
 };
+
+var missingNumberGaussFormula = function (nums) {
+    // Gauss formula: sum from i=0 to n = n(n+1)/2
+    const expectedSum = (nums.length * (nums.length + 1)) / 2;
+    let actualSum = 0;
+
+    i = 0;
+    while (i < nums.length) {
+        actualSum += nums[i];
+        i++;
+    }
+
+    return expectedSum - actualSum;
+};
