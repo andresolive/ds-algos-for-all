@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/missing-number/
+
 var missingNumber = function (nums) {
     const n = nums.length;
 
