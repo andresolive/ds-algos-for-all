@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/number-of-1-bits/
+
 var hammingWeight = function (n) {
     // the parameter in .toString() specifies the base for the
     // number value (default is 10)
