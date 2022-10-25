@@ -16,3 +16,8 @@ var isPowerOfThree = function (n) {
 
     return n == 1;
 };
+
+var isPowerOfThreeMathSolution = function (n) {
+    if ((Math.log10(n) / Math.log10(3)) % 1 === 0) return true;
+    else return false;
+};
