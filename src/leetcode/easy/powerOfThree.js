@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/power-of-three/
+
 /* keep dividing n by b as long as the remainder is 0
 this is because n = b^x or n = b * b * ... * b
 hence it should be possible to divide n by b x number of times,
